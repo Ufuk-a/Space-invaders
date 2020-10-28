@@ -1,25 +1,37 @@
-from space_invaders.res.glob import *
 import pygame
 
 
 def main():
     pygame.display.init()
-    pygame.display.set_caption(TITLE)
+    pygame.display.set_caption("Space-Invaders")
     clock = pygame.time.Clock()
 
-    scr_size = (WIDTH, HEIGHT)
-    screen_args = (scr_size, pygame.FULLSCREEN) if FULLSCREEN else (scr_size, )
-    screen = pygame.display.set_mode(*screen_args)
+    screen = pygame.display.set_mode((500, 500))
+    screen.fill((0, 0, 0))
 
     while True:
         if not runTime(screen, clock):
             break
 
+
     pygame.quit()
 
+class player:
+    
+    def __init__(self, x, health, ammo, is_enemy):
+        self.x = x
+        self.health = health
+        self.ammo = ammo
+        self.is_enemy = is_enemy
+    
+    def render(x):
+        y = 100
+        pygame.draw.rect(screen, (255, 255, 255), (x, y, 10, 10))    
 
 def runTime(screen, clock):
-    clock.tick(FPS)
+    clock.tick(60)
+    human_ship = player(0, 100, 100, False)
+    human_ship.render()
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
