@@ -1,9 +1,10 @@
+import pygame  # 3. parti importları burada yapabilirsin
+
 WIDTH, HEIGHT = 600, 600
 FULLSCREEN = False
 PIXEL_WIDTH, PIXEL_HEIGHT = 30, 30
 
-TITLE = "EMPTY PYGAME"
-DRAW_GRID = 1
+TITLE = "TUNAPRO1234"
 FPS = 60
 
 
@@ -18,9 +19,3 @@ class colors:
     green = (34, 139, 34)
 
 
-class states:
-    empty = 0
-    wall = 1
-
-
-(WIDTH, HEIGHT) = (WIDTH + 1, HEIGHT + 1) if DRAW_GRID else (WIDTH, HEIGHT)
