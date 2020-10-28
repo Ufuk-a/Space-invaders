@@ -11,5 +11,10 @@ Her şeyin classından kastım Spaceship diye ana bir class daha sonra Enemy ve 
 res/glob.py dosyası dışında, her şeyi fonksiyonların içine yazmaya çalış.
 
 Mermi işi tamamen sana kalmış ya da oraya gelince konuşuruz
+<br>
+
+## Yaptığın her değişikliği düzgün bir şekilde isimlendirip commit at, 1 committe 5000 satır olması sinir bozucu oluyor
+
+<br>
 
 takıl kafana göre
