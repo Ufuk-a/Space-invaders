@@ -16,11 +16,11 @@ class HumanShip(pygame.sprite.Sprite):
         
     def update(self):
         key = pygame.key.get_pressed()
-        dist = 2
+        speed = 2
         if key[pygame.K_LEFT]:
-            self.rect.x -= dist
+            self.rect.x -= speed
         elif key[pygame.K_RIGHT]:
-            self.rect.x += dist    
+            self.rect.x += speed    
             
     def get_x(self):
         return self.rect.x
@@ -40,10 +40,10 @@ class EnemyShip(pygame.sprite.Sprite):
     def update(self):
         
         speed = 1.5 
-        if player.rect.x > self.rect.x:
-            self.rect.x += speed
-        elif player.rect.x < self.rect.x:
-            self.rect.x -= speed    
+        if player.rect.x < self.rect.x:
+            self.rect.x -= speed
+        elif player.rect.x > self.rect.x:
+            self.rect.x += speed    
         else:
             pass
             
