@@ -1,5 +1,5 @@
 from space_invaders.res.glob import *
-from space_invaders.lib.human_ship import *
+from space_invaders.lib.human_ship import * #bunu yapmanın 1 satırlık yolu olduğna 100% eminim ama bilmiyorum
 from space_invaders.lib.enemy_ship import *
 from space_invaders.lib.bullet import *
 
@@ -7,9 +7,10 @@ from space_invaders.lib.bullet import *
 
 def main():
     
+    # updatelerin parametreleri farklı olduğu için sprite gruplarını bölmem gerekiyor kafayı yicem
     player_ship = pygame.sprite.Group()
-    enemy_ship = pygame.sprite.Group()
-    bullets = pygame.sprite.Group()
+    enemy_ship = pygame.sprite.Group() 
+    bullets = pygame.sprite.Group() 
     player = HumanShip()
     enemy = EnemyShip()
     player_ship.add(player)
