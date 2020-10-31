@@ -23,7 +23,13 @@ class HumanShip(pygame.sprite.Sprite):
         elif key[pygame.K_RIGHT]:
             self.x += speed    
             self.rect.x = self.x
-            
+        
+        if self.rect.left < 0:
+            self.rect.left = 0
+            self.x = 0
+        elif self.rect.right > 600:
+            self.rect.right = 600       
+            self.x = 536
 player = HumanShip()
             
 class EnemyShip(pygame.sprite.Sprite):
