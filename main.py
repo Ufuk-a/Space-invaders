@@ -19,7 +19,9 @@ def main():
          
         screen.fill(colors.black)   
         ships.update()
+        bullets.update()
         ships.draw(screen)
+        bullets.draw(screen)
         pygame.display.update()
         
     

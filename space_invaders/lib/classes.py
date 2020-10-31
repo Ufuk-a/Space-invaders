@@ -2,6 +2,36 @@ from space_invaders.res.glob import *
 pygame.init()
 
 ships = pygame.sprite.Group()
+bullets = pygame.sprite.Group()
+
+bullet_image = pygame.image.load("space_invaders\\res\\bullet.png")
+class Bullet(pygame.sprite.Sprite):
+    
+    def __init__(self, x, y, direction):
+        pygame.sprite.Sprite.__init__(self)
+        
+        self.image = bullet_image
+        self.rect = self.image.get_rect()
+        self.rect.center = (x, 0)
+        self.direction = direction
+        self.x = x
+        self.y = y
+    
+    def update(self):
+        
+        speed = 10
+        if self.y > 0 and self.y < 600:
+            if self.direction == "up":
+                self.y -= speed
+                self.rect.y = self.y
+                
+            if self.direction == "down":
+                self.y += speed    
+                self.rect.y = self.y
+                
+        else:
+            bullets.remove(self)        
+
 player_image = pygame.image.load("space_invaders\\res\\human_ship.png")
 
 class HumanShip(pygame.sprite.Sprite):
@@ -30,6 +60,7 @@ class HumanShip(pygame.sprite.Sprite):
         elif self.rect.right > 600:
             self.rect.right = 600       
             self.x = 536
+
 player = HumanShip()
             
 class EnemyShip(pygame.sprite.Sprite):
@@ -52,7 +83,8 @@ class EnemyShip(pygame.sprite.Sprite):
             self.x += speed    
             self.rect.x = self.x
         else:
-            pass
+            shoot = Bullet(self.x + 32, 120, "down")
+            bullets.add(shoot)
             
 enemy = EnemyShip()
 
