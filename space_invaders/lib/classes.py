@@ -1,4 +1,3 @@
-from pygame.display import update
 from space_invaders.res.glob import *
 pygame.init()
 
