@@ -8,11 +8,6 @@ def main():
     pygame.display.set_caption(TITLE)
     clock = pygame.time.Clock()
     
-    ships = pygame.sprite.Group()
-    player = HumanShip(300)
-    ships.add(player)
-    screen.fill(colors.black)
-    
     running = True
     while running:
         clock.tick(FPS)
@@ -21,6 +16,8 @@ def main():
             if event.type == pygame.QUIT: 
                 running = False 
 
+         
+        screen.fill(colors.black)   
         ships.update()
         ships.draw(screen)
         pygame.display.update()
