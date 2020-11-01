@@ -1,3 +1,5 @@
+from space_invaders.lib.enemy_ship import EnemyShip
+from space_invaders.lib.human_ship import HumanShip
 from space_invaders.res.glob import *
 pygame.init()
 
@@ -14,8 +16,9 @@ class Bullet(pygame.sprite.Sprite):
         self.x = x
         self.y = y
     
-    def update(self, bullets):
+    def update(self, bullets, HumanShip, EnemyShip):
         
+        #Bullet movement
         speed = 10
         if self.y > 0 and self.y < 600:
             if self.direction == "up":
@@ -28,3 +31,16 @@ class Bullet(pygame.sprite.Sprite):
                 
         else:
             bullets.remove(self)        
+            
+        #Collision logic    
+        if self.direction == "down":
+            if self.y < 532 and self.y > 468:
+                if self.x > HumanShip.rect.x and self.x < HumanShip.rect.x + 64:
+                    HumanShip.hp -= 5
+                    bullets.remove(self)
+        if self.direction == "up":
+            if self.y < 132 and self.y > 68:
+                if self.x > EnemyShip.rect.x and self.x < EnemyShip.rect.x + 64:
+                    EnemyShip.hp -=5 
+                    bullets.remove(self)
+                        
