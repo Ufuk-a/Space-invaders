@@ -11,7 +11,7 @@ def main():
     player_ship = pygame.sprite.Group()
     enemy_ship = pygame.sprite.Group() 
     bullets = pygame.sprite.Group() 
-    player = HumanShip(10000)
+    player = HumanShip(1000)
     enemy = EnemyShip(100)
     player_ship.add(player)
     enemy_ship.add(enemy)   

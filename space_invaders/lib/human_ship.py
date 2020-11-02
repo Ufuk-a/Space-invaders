@@ -26,7 +26,7 @@ class HumanShip(pygame.sprite.Sprite):
             end_score = FONT.render(f"You died! Your score was: {self.score}", False, colors.white)
             screen.blit(end_score,(200,300)) 
             if key[pygame.K_SPACE]:
-                player_ship.remove(self)        
+                pygame.quit()     
         
         
         #Movement
