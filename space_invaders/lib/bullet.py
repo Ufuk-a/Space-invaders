@@ -40,4 +40,3 @@ class Bullet(pygame.sprite.Sprite):
                 if self.x > enemy.rect.x and self.x < enemy.rect.x + 64:
                     enemy.hp -=5 
                     bullets.remove(self)
-                        

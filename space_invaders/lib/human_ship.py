@@ -58,4 +58,3 @@ class HumanShip(pygame.sprite.Sprite):
         #score
         score_text = FONT.render(f"Score: {self.score}", False, colors.white)
         screen.blit(score_text,(0,0))
-        
