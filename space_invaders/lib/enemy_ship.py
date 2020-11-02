@@ -42,7 +42,6 @@ class EnemyShip(pygame.sprite.Sprite):
         #health logic 
         if self.hp < 0:
             self.hp = 0
-        print(self.hp)
         if self.hp == 0:
             player.score += 1
             self.hp = 100 * (player.score + 1)
