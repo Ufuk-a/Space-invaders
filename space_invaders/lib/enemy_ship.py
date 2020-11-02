@@ -15,7 +15,7 @@ class EnemyShip(pygame.sprite.Sprite):
         self.rect.center = (self.x + 32, 100)                
         self.hp = hp
 
-    def update(self, player, bullets, Bullet, enemy_ship):
+    def update(self, player, bullets, Bullet):
         
         #Enemy movement
         speed = 1.5
@@ -40,5 +40,11 @@ class EnemyShip(pygame.sprite.Sprite):
             self.x = 536
             
         #health logic 
+        if self.hp < 0:
+            self.hp = 0
+        print(self.hp)
         if self.hp == 0:
-            enemy_ship.remove(self)    
+            player.score += 1
+            self.hp = 100 * (player.score + 1)
+            self.x = 300
+            self.rect.x = 300

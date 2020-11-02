@@ -2,7 +2,7 @@ from space_invaders.res.glob import *
 from space_invaders.lib.human_ship import * #bunu yapmanın 1 satırlık yolu olduğna 100% eminim ama bilmiyorum
 from space_invaders.lib.enemy_ship import *
 from space_invaders.lib.bullet import *
-import time
+
 
 
 def main():
@@ -11,8 +11,8 @@ def main():
     player_ship = pygame.sprite.Group()
     enemy_ship = pygame.sprite.Group() 
     bullets = pygame.sprite.Group() 
-    player = HumanShip(100)
-    enemy = EnemyShip(1000)
+    player = HumanShip(10000)
+    enemy = EnemyShip(100)
     player_ship.add(player)
     enemy_ship.add(enemy)   
     
@@ -29,9 +29,10 @@ def main():
                 running = False 
                 
         
+        
         screen.fill(colors.black)   
-        player_ship.update(player_ship, Bullet, bullets)
-        enemy_ship.update(player, bullets, Bullet, enemy_ship)
+        player_ship.update(player_ship, Bullet, bullets, screen)
+        enemy_ship.update(player, bullets, Bullet)     
         bullets.update(bullets, player, enemy)
         player_ship.draw(screen)
         enemy_ship.draw(screen)

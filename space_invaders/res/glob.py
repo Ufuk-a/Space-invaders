@@ -7,6 +7,7 @@ PIXEL_WIDTH, PIXEL_HEIGHT = 30, 30
 
 TITLE = "Space Invaders"
 FPS = 60
+FONT = pygame.font.SysFont("space_invaders\\res\\pixelated.ttf", 30)
 
 class colors:
     red = (255, 0, 0)
