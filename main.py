@@ -1,8 +1,6 @@
 from space_invaders.res.glob import *
-from space_invaders.lib.human_ship import * #bunu yapmanın 1 satırlık yolu olduğna 100% eminim ama bilmiyorum
-from space_invaders.lib.enemy_ship import *
-from space_invaders.lib.bullet import *
-
+from space_invaders.lib.human_ship import HumanShip #bunu yapmanın 1 satırlık yolu olduğna 100% eminim ama bilmiyorum
+from space_invaders.lib.enemy_ship import EnemyShip
 
 
 def main():
@@ -31,8 +29,8 @@ def main():
         
         
         screen.fill(colors.black)   
-        player_ship.update(player_ship, Bullet, bullets, screen)
-        enemy_ship.update(player, bullets, Bullet)     
+        player_ship.update(bullets, screen)
+        enemy_ship.update(player, bullets)     
         bullets.update(bullets, player, enemy)
         player_ship.draw(screen)
         enemy_ship.draw(screen)

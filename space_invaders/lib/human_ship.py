@@ -1,7 +1,7 @@
+from space_invaders.lib.bullet import Bullet
 from space_invaders.res.glob import *
-pygame.init()
 
-player_image = pygame.image.load("space_invaders\\res\\human_ship.png")
+player_image = pygame.image.load("space_invaders\\res\\images\\human_ship.png")
 
 class HumanShip(pygame.sprite.Sprite):
     
@@ -15,7 +15,7 @@ class HumanShip(pygame.sprite.Sprite):
         self.hp = hp    
         self.score = 0
     
-    def update(self, player_ship, Bullet, bullets, screen):
+    def update(self, bullets, screen):
         key = pygame.key.get_pressed()
     
         #health logic

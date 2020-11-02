@@ -1,8 +1,7 @@
-from space_invaders.lib.human_ship import HumanShip
+from space_invaders.lib.bullet import Bullet
 from space_invaders.res.glob import *
-pygame.init()
 
-player_image = pygame.image.load("space_invaders\\res\\human_ship.png")
+player_image = pygame.image.load("space_invaders\\res\\images\\human_ship.png")
 
 class EnemyShip(pygame.sprite.Sprite):
     
@@ -15,7 +14,7 @@ class EnemyShip(pygame.sprite.Sprite):
         self.rect.center = (self.x + 32, 100)                
         self.hp = hp
 
-    def update(self, player, bullets, Bullet):
+    def update(self, player, bullets):
         
         #Enemy movement
         speed = 1.5
